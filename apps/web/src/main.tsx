@@ -1,5 +1,5 @@
-import { StrictMode } from 'react'
-import ReactDOM from 'react-dom/client'
+import { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
 import {
   Outlet,
   RouterProvider,
@@ -7,8 +7,9 @@ import {
   createRouter,
   createRoute,
   createRootRoute,
-} from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
+} from '@tanstack/react-router';
+import { TanStackRouterDevtools } from '@tanstack/router-devtools';
+import './index.css'
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -26,7 +27,7 @@ const rootRoute = createRootRoute({
       <TanStackRouterDevtools />
     </>
   ),
-})
+});
 
 const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
@@ -36,34 +37,34 @@ const indexRoute = createRoute({
       <div className="p-2">
         <h3>Welcome Home!</h3>
       </div>
-    )
+    );
   },
-})
+});
 
 const aboutRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/about',
   component: function About() {
-    return <div className="p-2">Hello from About!</div>
+    return <h1 className="text-8xl font-bold underline text-cyan-500">About!</h1>;
   },
-})
+});
 
-const routeTree = rootRoute.addChildren([indexRoute, aboutRoute])
+const routeTree = rootRoute.addChildren([indexRoute, aboutRoute]);
 
-const router = createRouter({ routeTree })
+const router = createRouter({ routeTree });
 
 declare module '@tanstack/react-router' {
   interface Register {
-    router: typeof router
+    router: typeof router;
   }
 }
 
-const rootElement = document.getElementById('app')!
+const rootElement = document.getElementById('app')!;
 if (!rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement)
+  const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
       <RouterProvider router={router} />
-    </StrictMode>,
-  )
+    </StrictMode>
+  );
 }
