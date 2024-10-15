@@ -8,8 +8,10 @@ import {
   createRoute,
   createRootRoute,
 } from '@tanstack/react-router';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
-import './index.css'
+import './index.css';
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -45,7 +47,9 @@ const aboutRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/about',
   component: function About() {
-    return <h1 className="text-8xl font-bold underline text-cyan-500">About!</h1>;
+    return (
+      <h1 className="text-8xl font-bold underline text-cyan-500">About!</h1>
+    );
   },
 });
 
@@ -58,13 +62,16 @@ declare module '@tanstack/react-router' {
     router: typeof router;
   }
 }
-
+const queryClient = new QueryClient();
 const rootElement = document.getElementById('app')!;
 if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </StrictMode>
   );
 }
