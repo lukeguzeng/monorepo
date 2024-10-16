@@ -34,3 +34,9 @@ yarn-error.log*
 
 # ui
 dist/
+
+# vercel
+.vercel
+
+# vinxi
+.vinxi
