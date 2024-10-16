@@ -1,5 +1,5 @@
-import "./globals.css";
-import "@repo/ui/styles.css";
+import './globals.css';
+import '@repo/ui/styles.css';
 import * as fs from 'fs';
 import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { createServerFn } from '@tanstack/start';
@@ -9,14 +9,14 @@ const filePath = 'count.txt';
 
 const LINKS = [
   {
-    title: "Docs",
-    href: "https://turbo.build/repo/docs",
-    description: "Find in-depth information about Turborepo features and API.",
+    title: 'Docs',
+    href: 'https://turbo.build/repo/docs',
+    description: 'Find in-depth information about Turborepo features and API.',
   },
   {
-    title: "Learn",
-    href: "https://turbo.build/repo/docs/handbook",
-    description: "Learn more about monorepos with our handbook.",
+    title: 'Learn',
+    href: 'https://turbo.build/repo/docs/handbook',
+    description: 'Learn more about monorepos with our handbook.',
   },
 ];
 
@@ -62,6 +62,7 @@ function Home() {
           </Card>
         ))}
       </div>
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
     </>
   );
 }
