@@ -1,5 +1,3 @@
-import './globals.css';
-import '@repo/ui/styles.css';
 import * as fs from 'fs';
 import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { createServerFn } from '@tanstack/start';
