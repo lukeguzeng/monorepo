@@ -1,7 +1,4 @@
 // app/routes/__root.tsx
-import './globals.css';
-import '@repo/ui/styles.css';
-
 import { createRootRoute } from '@tanstack/react-router'
 import { Outlet, ScrollRestoration } from '@tanstack/react-router'
 import { Body, Head, Html, Meta, Scripts } from '@tanstack/start'

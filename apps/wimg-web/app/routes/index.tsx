@@ -3,6 +3,9 @@ import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { createServerFn } from '@tanstack/start';
 import { Card } from '@repo/ui/card';
 
+import '@repo/ui/styles.css';
+import './index.css';
+
 const filePath = 'count.txt';
 
 const LINKS = [
