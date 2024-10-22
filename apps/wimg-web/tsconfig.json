@@ -6,7 +6,11 @@
     "target": "ES2022",
     "skipLibCheck": true,
     "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["app/*"]
+    }
   },
-  "include": ["**/*.ts", "**/*.tsx", "postcss.config.js"],
+  "include": ["**/*.ts", "**/*.tsx","**/*.css", "postcss.config.js"],
   "exclude": ["node_modules"]
 }
