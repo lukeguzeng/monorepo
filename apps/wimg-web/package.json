@@ -5,7 +5,7 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vinxi dev",
+    "dev": "vinxi dev --port 3007",
     "build": "vinxi build",
     "start": "vinxi start"
   },
